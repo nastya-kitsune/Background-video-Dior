@@ -1,0 +1,91 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.intro {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.intro__media {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #ccc url(../Видео-фон/images/flowers-bg.png) no-repeat center center;
+    background-size: cover;
+}
+.intro__media::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    content: "";
+    background-color: rgba(0, 0, 0, .3);
+}
+.intro__media-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+
+}
+.intro__content {
+    z-index: 10;
+    color: #fff;
+    text-align: center;
+
+    animation-name:show;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.intro__content h1 {
+    font-family: 'Gurajada', serif;
+    font-size: 200px;
+    line-height: 112%;
+}
+.intro__content h2 {
+    font-size: 22px;
+    font-weight: 500;
+}
+.intro__content svg {
+    width: 60px;
+    height: 60px;
+    margin: 50px 0;
+}
+.intro__content svg g {
+    fill: #fff;
+    transition: all ease 1s;
+}
+.intro__content svg:hover g {
+    fill: rgb(243, 157, 210);
+}
